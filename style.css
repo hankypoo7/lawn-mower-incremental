@@ -1,0 +1,97 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: #8a9b0f; /* Grass color */
+    font-family: Arial, sans-serif;
+}
+
+#container {
+    display: flex;
+    flex-direction: row; /* Ensures content is laid out horizontally */
+    width: 100%;
+}
+
+#sidebar {
+    width: 220px; /* Sidebar width */
+    background-color: rgba(255, 255, 255, 0.8); /* Slightly opaque for contrast */
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    border-radius: 8px;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 10;
+    height: 80%; /* Full height minus padding */
+    overflow-y: auto; /* Allows scrolling if content exceeds the height */
+    display: block; /* Stack buttons one after another */
+}
+
+button {
+    margin: 10px 0; /* Space between buttons */
+    padding: 8px 16px; /* Compact padding */
+    cursor: pointer;
+    width: auto; /* Let buttons take width according to their content */
+    max-width: 180px;  /* Optional: Set max width to prevent excessive stretching */
+    background-color: #4CAF50;  /* Green background */
+    color: white;
+    border: none;
+    font-size: 14px;  /* Smaller font size */
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;  /* Darker green on hover */
+}
+
+
+#gameArea {
+    margin-left: 300px; /* Adjusted margin to avoid overlap with sidebar */
+    width: 500px;  /* Keep the same size */
+    height: 500px;
+    top: 10px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #2f5d2f;
+    border-radius: 10px;
+    background-color: #e0e0e0; /* Light gray background for the game area */
+    box-sizing: border-box;
+}
+
+#grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr); /* 10 columns */
+    grid-template-rows: repeat(10, 1fr); /* 10 rows */
+    gap: 1px; /* Adds small spacing between grid cells */
+}
+
+.grid-cell {
+    background-color: #3e7e42; /* Dark green (unmowed grass) */
+    width: 100%;
+    height: 100%;
+    transition: background-color 2s ease; /* Smooth transition for grass color change */
+}
+
+#mower {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    position: absolute;
+    border-radius: 10px;
+    transition: top 0.2s, left 0.2s; /* Smooth movement for the mower */
+}
+
+#grassCounter {
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
