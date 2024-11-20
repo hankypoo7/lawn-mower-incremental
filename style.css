@@ -71,7 +71,7 @@ button:hover {
     display: grid;
     grid-template-columns: repeat(10, 1fr); /* 10 columns */
     grid-template-rows: repeat(10, 1fr); /* 10 rows */
-    gap: 1px; /* Adds small spacing between grid cells */
+    gap: 0px; /* Adds small spacing between grid cells */
 }
 
 .grid-cell {
